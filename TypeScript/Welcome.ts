@@ -1,0 +1,1 @@
+console.log("Welcome to TypeScript 6.0.3!");
