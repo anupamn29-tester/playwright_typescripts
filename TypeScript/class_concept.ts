@@ -84,6 +84,8 @@ let std1=new student(2,"Rupam")
 std1.display()
 */
 
+//Example of a simple class in TypeScript:
+/*
 class employee{
     emp_name:string
     readonly emp_id:Number
@@ -118,3 +120,49 @@ employee.uodate_company('Code..')
 
 let Emp2=new employee('Anupam',2)
 Emp2.display_data()
+*/
+/*
+//Example of a simple class in TypeScript:
+class bankaccount{
+    accountHolder:string
+    balance:number
+
+    constructor(accountHolder:string,balance:number){
+        this.accountHolder=accountHolder
+        this.balance=balance
+    }
+
+    deposit(amount:number):void{
+        if(amount<=0){
+            console.log("Invalid Ammount")
+            return
+        }
+        this.balance+= amount
+        console.log("Deposited Balance is: ",amount)
+    }
+
+    withdraw(amount:number):void{
+        if(amount<=0){
+            console.log("Invalid Ammount")
+            return
+        }
+        if(amount>this.balance){
+            console.log("Insufficient Balance")
+            return
+        }
+        this.balance-=amount
+        console.log("Withdraw balance is :",amount)
+
+    }
+    showbalance():void{
+        console.log("Current Balance: ",this.balance)
+    }
+} 
+let myacc=new bankaccount("Anupam",1000)
+myacc.deposit(500)
+myacc.showbalance()
+myacc.withdraw(1000)
+myacc.showbalance()
+*/
+
+
