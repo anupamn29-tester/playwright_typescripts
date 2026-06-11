@@ -84,3 +84,37 @@ let std1=new student(2,"Rupam")
 std1.display()
 */
 
+class employee{
+    emp_name:string
+    readonly emp_id:Number
+    emp_mail?:string
+    static emp_company:string='Ornet'
+
+    constructor(emp_name:string, emp_id:Number,emp_mail?:string){
+        this.emp_name=emp_name
+        this.emp_id=emp_id
+        this.emp_mail=emp_mail
+    }
+    display_data(){
+        console.log("Emp_name is:",this.emp_name)
+        console.log("Emp_id is: ",this.emp_id)
+        if(this.emp_mail){
+            console.log("Email id is: ",this.emp_mail)
+        }
+        else{
+            console.log("No Emp_mail")
+        }
+        console.log('My comany name is: ',employee.emp_company)
+    }
+
+    static uodate_company(emp_company:string){
+        this.emp_company=emp_company
+    }
+}
+let Emp1=new employee('Anupam',1,'anupamn29@gmail.com',)
+Emp1.display_data()
+
+employee.uodate_company('Code..')
+
+let Emp2=new employee('Anupam',2)
+Emp2.display_data()
