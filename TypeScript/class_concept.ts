@@ -165,4 +165,26 @@ myacc.withdraw(1000)
 myacc.showbalance()
 */
 
+class ShoppingCart{
+    products:string[]
 
+    constructor(products:string[]){
+        this.products=products
+    }
+
+    addProduct(product:string[]):void{
+        this.products.push(...product)
+        console.log(this.products)
+    }
+
+    remove(product:string[]):void{
+        this.products=this.products.filter(p=>!product.includes(p)) 
+        console.log(this.products)
+    }
+}
+
+const cart = new ShoppingCart(
+    ["Laptop","Mouse"]
+);
+cart.addProduct(["Mobile","HeadPhone"])
+cart.remove(["Laptop"])
