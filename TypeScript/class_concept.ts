@@ -46,7 +46,7 @@ member.view()
 */
 
 //Example of a simple class in TypeScript:
-
+/*
 class student{
     readonly stu_id:number
     nm: string
@@ -82,3 +82,4 @@ class student{
 
 let std1=new student(2,"Rupam")
 std1.display()
+*/
