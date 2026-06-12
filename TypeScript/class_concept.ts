@@ -164,7 +164,7 @@ myacc.showbalance()
 myacc.withdraw(1000)
 myacc.showbalance()
 */
-
+/*
 class ShoppingCart{
     products:string[]
 
@@ -188,3 +188,96 @@ const cart = new ShoppingCart(
 );
 cart.addProduct(["Mobile","HeadPhone"])
 cart.remove(["Laptop"])
+*/
+/*
+class EmployeeManager{
+    employees:string[]
+
+    constructor(employees:string[]){
+        this.employees=employees
+    }
+
+    addEmployee(name:string):void{
+        this.employees.push(name)
+        console.log(this.employees)
+    }
+
+    removeEmployee(name:string):void{
+        if(this.employees.includes(name)){
+            this.employees = this.employees.filter(emp => emp !== name)
+        }
+            else{
+                this.employees.push(name)
+            }
+            console.log(this.employees)
+
+    }
+
+    findEmployee(name:string):void{
+        if(this.employees.includes(name)){
+            console.log(`Employee ${name} found in the list.`)
+        }
+        else{
+            console.log(`Employee ${name} not found in the list.`)
+        }
+    }
+
+    showEmployees():void{
+        console.log("Employee List: ",this.employees)
+    }
+
+}
+let emp=new EmployeeManager(['anu','rup','pre'])
+emp.addEmployee('sourav')
+emp.removeEmployee('rup')
+emp.findEmployee('pre')
+emp.showEmployees()
+*/
+
+class Library{
+    books:string[]
+
+    constructor(books:string[]){
+        this.books=books
+    }
+
+    addBook(book:string):void{
+        if(this.books.includes(book)){
+            console.log("Book already Presrnt")
+        }
+        else{
+            this.books.push(book)
+        }
+        console.log(this.books)
+    }
+
+    removeBook(name:string):void{
+        if(this.books.includes(name)){
+            this.books=this.books.filter(p=>p!==name)
+        }
+        else{
+            console.log("Book Not found")
+        }
+        console.log(this.books)
+    }
+
+    findBook(name:string):void{
+        if(this.books.includes(name)){
+            console.log(name)
+        }
+        else{
+            console.log("Book Not Found")
+        }
+    }
+    showBooks():void{
+        console.log(this.books)
+    }
+}
+let rk=new Library(['Java','SQL'])
+rk.addBook('Python')
+rk.removeBook('SQL')
+rk.findBook('Java')
+rk.showBooks()
+rk.removeBook('C++')
+rk.addBook('Python')
+rk.showBooks()
