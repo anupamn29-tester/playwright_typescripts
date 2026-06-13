@@ -233,7 +233,7 @@ emp.removeEmployee('rup')
 emp.findEmployee('pre')
 emp.showEmployees()
 */
-
+/*
 class Library{
     books:string[]
 
@@ -281,3 +281,35 @@ rk.showBooks()
 rk.removeBook('C++')
 rk.addBook('Python')
 rk.showBooks()
+*/
+
+class StudentManager{
+    students:string[]
+    
+
+    constructor(students:string[]){
+        this.students=students.map(String=>String.toUpperCase())
+    }
+
+    addStudent(name:string){
+        if(this.students.includes(name)){
+            console.log(`${name} alreay exixt`)
+        }
+        else{
+            this.students.push(name);
+        }
+        console.log(this.students)
+    }
+    removeStudent(name:string){
+        if(this.students.includes(name)){
+            this.students=this.students.filter(p=>p!==name)
+        }
+        else{
+            console.log("Student Not Found")
+        }
+        console.log(this.students)
+    }
+}
+let std=new StudentManager(['Anu','Dhanu','Nanu'])
+std.addStudent('Kanu')
+std.removeStudent('NANU')
