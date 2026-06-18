@@ -208,7 +208,7 @@ dev.showPerson()
 
 dev.showDeveloper()
 */
-
+/*
 class Employe{
 
     readonly id:number
@@ -265,3 +265,161 @@ new Employe(
 40000
 )
 Employe.showEmployeeCount()
+*/
+/*
+class BankAccount{
+    readonly accountNumber:number
+    owner:string
+    private _balance:number
+    static totalAccounts:number=0
+    
+    constructor(accountNumber:number,owner:string,_balance:number){
+        this.accountNumber=accountNumber
+        this.owner=owner
+        this._balance=_balance
+
+        BankAccount.totalAccounts++
+    }
+
+    deposit(amount:number){
+        if(amount>0){
+            this._balance+=amount
+        }
+        else{
+            console.log("Ivalid ammount")
+        }
+    }
+    withdraw(amount:number){
+        if(amount<this._balance){
+            this._balance-=amount
+        }
+        else{
+            console.log("Insufficient Balance")
+        }
+    }
+    transfer(target:BankAccount,amount:number){
+        if(amount>this._balance){
+            console.log('Insufficient Balance')
+        }
+        else{
+            this._balance-=amount
+            target._balance+=amount
+        }
+    }
+    get accountInfo(){
+        return {accountNumber:this.accountNumber,owner:this.owner,balance:this._balance}
+    }
+    
+    static showTotalAccounts(){
+        console.log(BankAccount.totalAccounts)
+    }
+}
+
+let a1 =new BankAccount(101,"Anupam",10000)
+let a2 =new BankAccount(102,"Rahul",5000)
+a1.deposit(1000)
+a1.withdraw(2000)
+a1.transfer(a2,3000)
+console.log(a1.accountInfo)
+console.log(a2.accountInfo)
+
+BankAccount.showTotalAccounts()
+*/
+
+class ShoppingCart{
+    readonly userId:number
+    private products:string[] = []
+    private prices:number[] = []
+    static totalCart:number=0
+
+    constructor(userId:number){
+        this.userId=userId
+        ShoppingCart.totalCart++
+    }
+
+    addProduct(product:string,price:number){
+        if(price>0){
+            this.products.push(product)
+            this.prices.push(price)
+        }
+        else{
+            console.log("Invalid Pro.")
+        }
+    }
+
+
+
+  
+ removeProduct(product:string){
+    const index =this.products.findIndex(p=>p===product)
+    if(index!==-1){
+    this.products.splice(index,1)
+    this.prices.splice(index,1)
+   }
+    else{
+    console.log("Product Not Found")
+   }
+
+ }
+
+
+
+calculateTotal(){
+   return this.prices.reduce((sum,p)=>sum+p,0)
+ }
+
+
+ 
+    get cartInfo(){
+        return{userId:this.userId,products:this.products,totalPrice:this.calculateTotal}
+    }
+
+    static showTotalCart(){
+        console.log(ShoppingCart.totalCart)
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+let cart =
+new ShoppingCart(
+101
+)
+
+cart.addProduct(
+"Laptop",
+50000
+)
+
+cart.addProduct(
+"Mouse",
+1000
+)
+
+cart.removeProduct(
+"Mouse"
+)
+
+console.log(
+cart.calculateTotal()
+)
+
+console.log(
+cart.cartInfo
+)
+
+ShoppingCart.showTotalCart()
