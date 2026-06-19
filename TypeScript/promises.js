@@ -1,0 +1,94 @@
+/*
+let apicall=new Promise((resolve,reject)=>{
+    //resolve({status:200,body:"Ok"})
+    reject("500 Error")
+})
+apicall
+    .then((response)=>{
+        console.log(response)
+        console.log(response.status)
+    })
+    .catch((NoResponse)=>{
+        console.log(NoResponse)
+    })
+    .finally(()=>{                          //Final is not mandatory 
+        console.log("Process Complete")
+    })
+*/
+/*
+let food=new Promise((resolve,reject)=>{
+    let order=false
+    if(order){
+        resolve("Oreder delivery Successfully")
+    }
+    else{
+        reject("Not Delivered")
+    }
+})
+
+food
+    .then((Success)=>{
+        console.log(Success)
+    })
+    .catch((Not_Done)=>{
+        console.log(Not_Done)
+    })
+    .finally(()=>{
+        console.log("Process Done")
+    })
+*/
+/*
+//If all are resolve ststus
+let ChekDB=new Promise((resolve,reject)=>{
+    resolve("Auth is Ok")
+})
+let CheckCatch=new Promise((resolve,reject)=>{
+    resolve("Coockis is ok")
+})
+let checkConnection=new Promise((resolve,reject)=>{
+    resolve("Conncetion is ok")
+})
+
+Promise.all([ChekDB,CheckCatch,checkConnection])
+.then((successfully_doneall)=>{
+    console.log(successfully_doneall)
+})
+*/
+/*
+//If one Promise reject then all Promise faild
+let ChekDB=new Promise((resolve,reject)=>{
+    resolve("Auth is Ok")
+})
+let CheckCatch=new Promise((resolve,reject)=>{
+    //resolve("Coockis is ok")
+    reject("Coockies Generated")
+})
+let checkConnection=new Promise((resolve,reject)=>{
+    resolve("Conncetion is ok")
+})
+
+Promise.all([ChekDB,CheckCatch,checkConnection])
+.then((successfully_doneall)=>{
+    console.log(successfully_doneall)
+})
+.catch((error_massage)=>{
+    console.log(error_massage)
+})
+*/
+
+let testing=new Promise((resolve,reject)=>{
+    resolve("1stTest is Pass")
+})
+let test2=new Promise((resolve,reject)=>{
+    reject("2nd Test is Faild")
+})
+let test3=new Promise((resolve,reject)=>{
+    reject("3rd Test is Failed")
+})
+Promise.allSettled([testing,test2,test3])
+.then((display)=>{
+    console.log(display)
+})
+.catch((error_mas)=>{           //catch is not require
+    console.log(error_mas)
+})

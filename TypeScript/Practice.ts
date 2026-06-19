@@ -325,7 +325,7 @@ console.log(a2.accountInfo)
 
 BankAccount.showTotalAccounts()
 */
-
+/*
 class ShoppingCart{
     readonly userId:number
     private products:string[] = []
@@ -380,21 +380,6 @@ calculateTotal(){
 }
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 let cart =
 new ShoppingCart(
 101
@@ -423,3 +408,4 @@ cart.cartInfo
 )
 
 ShoppingCart.showTotalCart()
+*/
