@@ -111,7 +111,7 @@ card
     console.log(faild)
 })
 */
-
+/*
 let card=new Promise((resolve,reject)=>{
     //let payment=false
    // if(payment){
@@ -136,4 +136,57 @@ Promise.all([card,purches,delivery_item])
 })
 .catch((Error)=>{
     console.log(Error)
+})
+*/
+
+//Asynchronous Function
+/*
+function login(username,password){
+    return new Promise((resolve,reject)=>{
+
+        setTimeout(() => {
+            if(username=="admin" && password=="1234"){
+            resolve("Login Successfully")
+        }
+            else{
+            reject("Login Failed")
+        }
+        }, 5000);
+    })
+}
+login("admin","234")
+.then((success)=>{
+    console.log(success)
+})
+.catch((error)=>{
+    console.log(error)
+})  
+.finally(()=>{
+    console.log("Closing Browser")
+})
+*/
+
+function fatch_user(){
+    return new Promise((resolve,reject)=>{
+        setTimeout(() => {
+            let inp=false
+            if(inp){
+                let user={name:'Anupam',age:25}
+                resolve(user)
+            }
+            else{
+                reject("Error Display")
+            }
+        }, 1000)
+    })
+}
+fatch_user()
+.then((succ_fatch)=>{
+    console.log(succ_fatch.name)
+})
+.catch((Not_get)=>{
+    console.log(Not_get)
+})
+.finally(()=>{
+    console.log("Data get successfully")
 })
