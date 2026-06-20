@@ -282,7 +282,7 @@ rk.removeBook('C++')
 rk.addBook('Python')
 rk.showBooks()
 */
-
+/*
 class StudentManager{
     students:string[]
     
@@ -313,3 +313,39 @@ class StudentManager{
 let std=new StudentManager(['Anu','Dhanu','Nanu'])
 std.addStudent('Kanu')
 std.removeStudent('NANU')
+*/
+
+class Employee{
+    name:string
+    id?:number
+    department?:string
+
+    constructor(name:string)
+    constructor(name:string,id?:number)
+    constructor(name:string,id:number,department:string)
+    constructor(name:string,id?:number,department?:string){
+        this.name=name
+        this.id=id
+        this.department=department
+    }
+
+    show_emp(){
+        console.log(this.name)
+        if(typeof this.id=="number"){
+            console.log(this.id)
+        }
+        else{
+            console.log("No Id")
+        }
+        if(typeof this.department=='string'){
+            console.log(this.department)
+        }
+        else{
+            console.log('No dept')
+        }
+    }
+}
+let emp1=new Employee('Anupam')
+emp1.show_emp()
+let emp2=new Employee('Ram',1)
+emp2.show_emp()
