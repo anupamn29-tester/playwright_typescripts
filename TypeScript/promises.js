@@ -75,7 +75,7 @@ Promise.all([ChekDB,CheckCatch,checkConnection])
     console.log(error_massage)
 })
 */
-
+/*
 let testing=new Promise((resolve,reject)=>{
     resolve("1stTest is Pass")
 })
@@ -91,4 +91,49 @@ Promise.allSettled([testing,test2,test3])
 })
 .catch((error_mas)=>{           //catch is not require
     console.log(error_mas)
+})
+*/
+/*
+let card=new Promise((resolve,reject)=>{
+    let payment=false
+    if(payment){
+        resolve("Payment Sucessfully")
+    }
+    else{
+        reject("Payment Not Done")
+    }
+})
+card
+.then((succ)=>{
+    console.log(succ)
+})
+.catch((faild)=>{
+    console.log(faild)
+})
+*/
+
+let card=new Promise((resolve,reject)=>{
+    //let payment=false
+   // if(payment){
+        resolve("Payment Sucessfully")
+    //}
+    //else{
+        //reject("Payment Not Done")
+    //}
+})
+let purches=new Promise((resolve,reject)=>{
+    //resolve("Item purches successfully")
+    reject("Item purches not done")
+})
+let delivery_item=new Promise((resolve,reject)=>{
+    resolve("Item Deleveriyed")
+    //reject("Item Not Delevery")
+})
+
+Promise.all([card,purches,delivery_item])
+.then((Done)=>{
+    console.log(Done)
+})
+.catch((Error)=>{
+    console.log(Error)
 })
