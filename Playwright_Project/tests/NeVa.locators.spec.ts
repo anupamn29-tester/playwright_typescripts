@@ -14,5 +14,20 @@ test("NeVa Title Check",async({page})=>{
     const welbla=page.getByText('Bihar Legislative Council ')
     await expect(welbla).toBeVisible()
 
-    
+    const language=page.getByRole('link',{name:'English'})
+    await expect(language).toBeVisible()
+    await language.click()
+
+    const businessLink = page.locator('#collapsibleNavbar').getByRole('link',{name:'Business'})
+    await expect(businessLink).toBeVisible()
+    await businessLink.click()
+
+    const asshouse = page.locator('#select2-assemblyLst-container')
+    await expect(asshouse).toBeVisible()
+    await asshouse.click()
+
+    const assemblyOption = page.locator('li.select2-results__option', { hasText: 'Bihar Legislative Council' })
+    await expect(assemblyOption).toBeVisible()
+    await assemblyOption.click()
+    await expect(asshouse).toHaveText('Bihar Legislative Council')
 })
