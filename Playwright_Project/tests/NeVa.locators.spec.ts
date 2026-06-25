@@ -46,4 +46,11 @@ test("NeVa Title Check",async({page})=>{
     else{
         console.error("Expected option not found")
     }
+
+    const sessionDate= page.getByRole('textbox',{name:'Select'})
+    await sessionDate.click()
+
+    const sessionDatelist=page.locator('li.select2-results__option')
+    await expect(sessionDatelist.first()).toBeVisible()
+    console.log(sessionDatelist.textContent())
 })
