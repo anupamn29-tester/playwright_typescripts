@@ -42,4 +42,33 @@ test ("Register User",async({page})=>{
     
     const title_gender=page.getByRole('radio',{name:"Mr."})
     await title_gender.click()
+
+    const name=page.locator('[data-qa="name"]');
+    await name.click()
+    await name.clear()
+    await name.fill(nam)
+
+    const email=page.locator('[data-qa="email"]');
+    await expect(email).toBeDisabled()
+
+    const password=page.locator('[data-qa="password"]');
+    await password.click()
+    await password.fill('123456')
+
+    const day=page.locator('[data-qa="days"]');
+    await day.selectOption('10')
+    
+    const month=page.locator('[data-qa="months"]');
+    await month.selectOption('5')
+
+    const year=page.locator('[data-qa="years"]');
+    await year.selectOption('1990')
+
+    const signup_receive_offers=['Sign up for our newsletter!','Receive special offers from our partners!']
+    for (const offer of signup_receive_offers) {
+        const checkbox = page.getByLabel(offer);
+        await checkbox.first().check();
+    }
+    
+
 })
